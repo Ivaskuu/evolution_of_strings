@@ -1,9 +1,9 @@
+![warning](http://icons.iconarchive.com/icons/paomedia/small-n-flat/24/sign-warning-icon.png "Warning") Work in progress ![warning](http://icons.iconarchive.com/icons/paomedia/small-n-flat/24/sign-warning-icon.png "Warning")
+
 # Evolution of strings
 This is a java (processing) project that simulates the genetic evolution of a string of text.
 
 _It's my first Machine Learning - Artificial Intelligence project, so please be gentle with me :-)._
-
-![warning](http://icons.iconarchive.com/icons/paomedia/small-n-flat/24/sign-warning-icon.png "Warning") Work in progress ![warning](http://icons.iconarchive.com/icons/paomedia/small-n-flat/24/sign-warning-icon.png "Warning")
 
 ## Files
 The project is composed of 3 files :
