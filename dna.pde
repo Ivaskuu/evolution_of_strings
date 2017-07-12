@@ -87,14 +87,32 @@ class DNA
     Random r = new Random();
     int rand = r.nextInt(105);
     
-    if(rand < 60) // Mutate 1 gene
+    if(rand < 40) // Mutate 1 gene
     {
       genes[r.nextInt(genes.length)] = getRandomChar(r);
     }
-    else if(rand < 90) // Mutate a random number of genes
+    else if(rand < 70) // Mutate a random number of genes
     {
       int genesToMutate = r.nextInt(genes.length);
       for(int i = 0; i < genesToMutate; i++) genes[r.nextInt(genes.length)] = getRandomChar(r);
+    }
+    else if(rand < 90) // Split the genes and rearrange the 2 pieces
+    {
+      int middle = r.nextInt(genes.length);
+      String completeGene = getGenesString().substring(middle, genes.length) + getGenesString().substring(0, middle);
+      
+      genes = completeGene.toCharArray();
+    }
+    else if(rand < 100) // Reverse the order of the genes
+    {
+      int genesLength = genes.length;
+      
+      for(int i = 0; i < genesLength / 2; i++)
+      {
+        char temp = genes[i];
+        genes[i] = genes[(genesLength - i) - 1];
+        genes[(genesLength - i) - 1] = temp;
+      }
     }
     else // Mutate all genes
     {
