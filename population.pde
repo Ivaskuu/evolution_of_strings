@@ -13,7 +13,9 @@ class Population
   String bestGenes;
   
   DNA[] elements;
-  ArrayList<DNA> matingPool;
+  
+  double cumulativeFitness;
+  double[] elementsFitness;
   
   Population(String stringTarget, double mutationRate, int populationNum)
   {
@@ -62,15 +64,15 @@ class Population
     prepareTheMatingPool();
     
     Random r = new Random();
-    int matingPoolSize = matingPool.size();
+    DNA[] elementsCopy = elements;
     
     for(int i = 0; i < popNum; i++)
     {
-      int parent1Pos = r.nextInt(matingPoolSize);
-      DNA parent1 = matingPool.get(parent1Pos);
+      int parent1Pos = binarySearch(cumulativeFitness * r.nextDouble());
+      DNA parent1 = elementsCopy[parent1Pos];
       
-      int parent2Pos = r.nextInt(matingPoolSize);
-      DNA parent2 = matingPool.get(parent2Pos);
+      int parent2Pos = binarySearch(cumulativeFitness * r.nextDouble());
+      DNA parent2 = elementsCopy[parent2Pos];
       
       elements[i] = new DNA();
       elements[i].createFromParents(parent1, parent2);
@@ -81,13 +83,44 @@ class Population
   
   void prepareTheMatingPool()
   {
-    matingPool = new ArrayList<DNA>();
+    elementsFitness = new double[popNum];
+    cumulativeFitness = 0;
+    
     for(int i = 0; i < popNum; i++)
     {
-      int chance = (int)(Math.round(elements[i].fitness * 100));
-      for(int j = 0; j < chance; j++)
+      cumulativeFitness += Math.pow(elements[i].fitness, 2); // ^4 gives the best elements even more chance of being selected;
+      elementsFitness[i] = cumulativeFitness;
+    }
+  }
+  
+  int binarySearch(double value)
+  {
+    int lPos = 0;
+    int rPos = popNum - 1;
+    int middle;
+    
+    if(value < elementsFitness[0]) return 0;
+    else if(value <= elementsFitness[popNum-1] && value > elementsFitness[popNum-2]) return popNum - 1;
+    
+    while(true)
+    {
+      middle = (lPos + rPos) / 2;
+      
+      if(value >= elementsFitness[middle - 1] && value <= elementsFitness[middle])
       {
-        matingPool.add(elements[i]);
+        return middle;
+      }
+      else if(value < elementsFitness[middle])
+      {
+        rPos = middle;
+      }
+      else if(value > elementsFitness[middle])
+      {
+        lPos = middle;
+      }
+      else
+      {
+        println("wtf");
       }
     }
   }

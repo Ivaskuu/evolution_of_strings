@@ -2,8 +2,8 @@ Population pop;
 
 void setup()
 {
-  String target = "Lorem ipsum dolor sit amet consectetur adipiscing elit Pellentesque quis viverra quam Proin sit amet ullamcorper justo Quisque risus massa porta non nisl nec porta vulputate ex Quisque lobortis urna in suscipit aliquam justo tortor rutrum massa nec placerat justo diam ac nisl Suspendisse potenti Ut tincidunt dolor vitae suscipit";
-  double mutationRate = 0.005;
+  String target = "Buongiorno a tutti i ragazzi e le ragazze questo e un test per testare la velocita del programma";
+  double mutationRate = 0.01;
   int populationNum = 10000;
   
   if(target.indexOf('é') > 0 || target.indexOf('.') > 0 || target.indexOf(',') > 0)
