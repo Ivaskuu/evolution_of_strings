@@ -3,6 +3,8 @@ This is a java (processing) project that simulates the genetic evolution of a st
 
 _It's my first Machine Learning - Artificial Intelligence project, so please be gentle with me :-)._
 
+![warning](http://icons.iconarchive.com/icons/paomedia/small-n-flat/24/sign-warning-icon.png "Warning") Work in progress ![warning](http://icons.iconarchive.com/icons/paomedia/small-n-flat/24/sign-warning-icon.png "Warning")
+
 ## Files
 The project is composed of 3 files :
 - **main.pde** : It creates a population based on the target, the mutation rate and the number of elements, and train it.
