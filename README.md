@@ -25,3 +25,10 @@ Methods
 Methods
 - **_void_ setup**() : Called once at the start of the program. It 
 - **_void_ draw**() : Called each frame. It trains the population.
+
+### Mutations type and probabilities
+- **One gene** : One gene of the DNA is modified with a random char. **Probability : _40/105_**.
+- **Multiple genes** : A random number of genes (from 0 to max) of the DNA is modified with random chars. **Probability : _30/105_**.
+- **Split & rearrange** : A random point in the array is choosen, where the DNA gets splitted nad the first part goes last. **Probability : _20/105_**.
+- **Reverse genes** : The DNA is reversed. **Probability : _10/105_**.
+- **All genes** : All the genes of the DNA are random chars. **Probability : _5/105_**.
