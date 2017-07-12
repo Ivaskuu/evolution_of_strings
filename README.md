@@ -13,18 +13,21 @@ The project is composed of 3 files :
 
 ### main.pde
 Methods
-- **_void_ setup**() : Called once at the start of the program. It 
-- **_void_ draw**() : Called each frame. It trains the population.
+- **_void_ setup**() : Called once at the start of the program. It creates a new population, then trains it in a while loop.
 
 ### population.pde
 Methods
-- **_void_ setup**() : Called once at the start of the program. It 
-- **_void_ draw**() : Called each frame. It trains the population.
+- **Population**(**_String stringTarget, double mutationRate, int populationNum_**) : The constructer of the class, it creates a new population with the specified parameters.
+- **_void_ calculatePopFitness**() : It calculates the fitness of all elements, and prints the median fitness, best's genes and generation number.
+- **_void_ reproduce**() : It creates a new generation of population composed of popNum elements, based on the previous best elements DNA.
+- **_void_ prepareTheMatingPool**() : Puts all the elements fitness in a cumulative char array.
+- **_int_ binarySearch**(**_double value_**) : Returns the position of the range of the elements. The parameter value is a random double (from 0 to the max cumulative fitness).
+- **_void_ mutate**() : Calls the method mutate() for each element.
 
 ### dna.pde
 Methods
-- **_void_ setup**() : Called once at the start of the program. It 
-- **_void_ draw**() : Called each frame. It trains the population.
+- **_void_ wip**() : WIP :-).
+- **_void_ wip**() : WIP :-).
 
 ### Mutations type and probabilities
 - **One gene** : One gene of the DNA is modified with a random char. **Probability : _40/105_**.
