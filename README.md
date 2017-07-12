@@ -1,7 +1,7 @@
 # Evolution of strings
 This is a java (processing) project that simulates the genetic evolution of a string of text.
 
-_It's my first Machine Learning - Artificial Intelligence project, so please be gentle with me :-)_
+_It's my first Machine Learning - Artificial Intelligence project, so please be gentle with me :-)._
 
 ## Files
 The project is composed of 3 files :
