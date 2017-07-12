@@ -35,3 +35,4 @@ Methods
 - **Split & rearrange** : A random point in the array is choosen, where the DNA gets splitted nad the first part goes last. **Probability : _20/105_**.
 - **Reverse genes** : The DNA is reversed. **Probability : _10/105_**.
 - **All genes** : All the genes of the DNA are random chars. **Probability : _5/105_**.
+NA are random chars. **Probability : _5/105_**.
